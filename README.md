@@ -1,5 +1,4 @@
 # Landsat-Classification-Using-Neural-Network
-All the files mentioned in the article on Towards Data Science Neural Network for Landsat Classification Using Tensorflow in Python | A step-by-step guide.<br/>
+Data used in the current scope
 
-Follow the link:<br/>
-https://towardsdatascience.com/neural-network-for-satellite-data-classification-using-tensorflow-in-python-a13bcf38f3e1
+Here, we will treat six bands (band 2 — band 7) of Landsat 5 TM as features and try to predict the binary built-up class. A multispectral Landsat 5 data acquired in the year 2011 for Bangalore and its corresponding binary built-up layer will be used for training and testing. Finally, another multispectral Landsat 5 data acquired in the year 2011 for Hyderabad will be used for new predictions.
