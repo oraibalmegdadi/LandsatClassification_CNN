@@ -65,12 +65,13 @@ Output:
 (2519025, 1, 6) (1679351, 1, 6) (1391808, 1, 6)
 ```
 # Building the Model using Keras
-_**NOTES Bout the model:**
+**NOTES Bout the model:**
 
--Use the sequential model, to add the layers one after the other. 
--One input layer (number of nodes equal to nBands)
--One hidden layer with 14 nodes and ‘relu’ as the activation function is used. 
--compile the model with ‘adam’ optimiser
+- Use the sequential model, to add the layers one after the other. 
+- One input layer (number of nodes equal to nBands)
+- One hidden layer with 14 nodes and ‘relu’ as the activation function is used. 
+- compile the model with ‘adam’ optimiser
+
 ```
 from tensorflow import keras
 
