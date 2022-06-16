@@ -123,10 +123,27 @@ print("Confusion matrix: for 14 nodes\n", cMatrix)
 print("\nP-Score: %.3f, R-Score: %.3f" % (pScore, rScore))
 
 ```
+output: 
+```
 Confusion matrix: for 14 nodes
  [[1453622   27254]
  [  40860  157615]]
 
 P-Score: 0.853, R-Score: 0.794
+```
+
+**use the model to predict for the new data and export the GeoTIFF  (Note that we are exporting the GeoTIFF with the predicted probability values, and not its thresholded binary version. )**
 
 ```
+predicted = model.predict(featuresHyderabad)
+predicted = predicted[:,1]
+
+#Export raster
+prediction = np.reshape(predicted, (ds.RasterYSize, ds.RasterXSize))
+outFile = 'Hyderabad_2011_BuiltupNN_predicted.tif'
+raster.export(prediction, ds3, filename=outFile, dtype='float')
+
+```
+
+![](imag5.png)
+Hyderabad built-up layer as predicted by the model using the multispectral data
