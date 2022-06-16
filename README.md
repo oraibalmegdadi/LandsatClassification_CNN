@@ -71,6 +71,7 @@ Output:
 - One input layer (number of nodes equal to nBands)
 - One hidden layer with 14 nodes and ‘relu’ as the activation function is used. 
 - compile the model with ‘adam’ optimiser
+- run the model on xTrain and yTrain with two epochs 
 
 ```
 from tensorflow import keras
@@ -89,4 +90,43 @@ model.fit(xTrain, yTrain, epochs=2)
 -The final layer contains two nodes for the binary built-up class with ‘softmax’ activation function, which is suitable for categorical output. 
 
 ```
+Output: 
+
+```
+Epoch 1/2
+78720/78720 [==============================] - 82s 1ms/step - loss: 0.1190 - accuracy: 0.9550
+Epoch 2/2
+78720/78720 [==============================] - 81s 1ms/step - loss: 0.1075 - accuracy: 0.9592
+52480/52480 [==============================] - 38s 730us/step
+
+```
+
 ![](imag4.png)
+Neural Network architecture
+
+## Prediction
+predict the values for the test data , and perform various accuracy checks.
+```
+from sklearn.metrics import confusion_matrix, precision_score, recall_score
+
+# Predict for test data 
+yTestPredicted = model.predict(xTest)
+yTestPredicted = yTestPredicted[:,1]
+
+# Calculate and display the error metrics
+yTestPredicted = (yTestPredicted>0.5).astype(int)
+cMatrix = confusion_matrix(yTest, yTestPredicted)
+pScore = precision_score(yTest, yTestPredicted)
+rScore = recall_score(yTest, yTestPredicted)
+
+print("Confusion matrix: for 14 nodes\n", cMatrix)
+print("\nP-Score: %.3f, R-Score: %.3f" % (pScore, rScore))
+
+```
+Confusion matrix: for 14 nodes
+ [[1453622   27254]
+ [  40860  157615]]
+
+P-Score: 0.853, R-Score: 0.794
+
+```
