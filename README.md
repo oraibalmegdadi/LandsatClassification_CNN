@@ -23,7 +23,9 @@ Schemata of restructuring of data
 ## Data Training and Validation
 Now, we will split the data for training and validation. This is done to make sure that the model has not seen the test data and it performs equally well on new data. Otherwise, the model will overfit and perform well only on training data.
 
-`from sklearn.model_selection import train_test_split
+```
+
+from sklearn.model_selection import train_test_split
 
 xTrain, xTest, yTrain, yTest = train_test_split(featuresBangalore, labelBangalore, test_size=0.4, random_state=42)
 
@@ -31,12 +33,16 @@ print(xTrain.shape)
 print(yTrain.shape)
 
 print(xTest.shape)
-print(yTest.shape)`
+print(yTest.shape)
+```
+
 
 Output: 
+```
 
-`(2519025, 6)
+(2519025, 6)
 (2519025,)
 (1679351, 6)
 (1679351,)
-`
+```
+
