@@ -6,4 +6,10 @@ working with six bands (band 2 — band 7) of Landsat 5 TM as features and try t
 
 ##  This is a supervised ML approach (using labelled data to train the model)
 !['Multispectral training data and its corresponding binary built-up layer'](imag1.png)
-Multispectral training data and its corresponding binary built-up layer
+**Multispectral training data and its corresponding binary built-up layer
+
+The used libraries: 
+- pyrsgis — to read and write GeoTIFF
+- scikit-learn — for data pre-processing and accuracy checks
+- numpy — for basic array operations
+- Tensorflow — to build the neural network model
