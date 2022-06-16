@@ -145,5 +145,5 @@ raster.export(prediction, ds3, filename=outFile, dtype='float')
 
 ```
 
-![](imag5.png)
+!['km'](imag5.png)
 Hyderabad built-up layer as predicted by the model using the multispectral data
